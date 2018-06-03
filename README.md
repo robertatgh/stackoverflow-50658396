@@ -1,13 +1,21 @@
-package com.stackoverflow;
-
-import javax.validation.Valid;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+# [Stack Overflow: Jersey JAX-RS REST “getter” method always called][1]
 
 
+### Run
+
+```bash
+mvn jetty:run
+```
+
+### cURL
+
+```bash
+curl -i -H 'Content-Type:application/json' -d '{"message":"Hello World"}' http://localhost:8080/hello
+```
+
+With the following resource class
+
+```java
 @Path("/hello")
 @Produces("application/json")
 @Consumes("application/json")
@@ -26,3 +34,9 @@ public class HelloResource {
     return message;
   }
 }
+```
+
+When we make the previous POST request, the `getSomething()` resource method is also called.
+
+
+[1]: https://stackoverflow.com/q/50658396/2587435
