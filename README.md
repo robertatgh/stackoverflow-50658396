@@ -10,7 +10,7 @@ mvn jetty:run
 ### cURL
 
 ```bash
-curl -i -H 'Content-Type:application/json' -d '{"message":"Hello World"}' http://localhost:8080/hello
+curl -i -H 'Content-Type:application/json' -d '{"message":"Hello World"}' http://localhost:8080/api/hello
 ```
 
 With the following resource class
